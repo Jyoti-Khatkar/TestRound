@@ -1,8 +1,11 @@
 <template>
   <div class="product-card">
+
     <v-row>
-      <v-col v-for="item in product" :key="item.id">
-        <v-card class="mx-auto" max-width="600" min-width="550">
+
+      <v-col v-for="item in product" :key="item.id" cols="12"
+        sm="6" md="4" xs="12" >
+        <v-card class="mx-auto" max-width="350" min-width="350">
           <v-img class="align-end text-white" :src="item.image" height="125" min-width="125" cover>
 
           </v-img>

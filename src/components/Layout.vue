@@ -33,10 +33,10 @@
 import { ref } from "vue";
 
 import { useRouter } from "vue-router";
-const selected=ref(null);
+const selected=ref("Products");
 const router=useRouter();
 const productList=()=>{
-    selected.value='Products';
+    selected.value='Products';  
 router.push({name:'Products'})
 }
 const CartList=()=>{

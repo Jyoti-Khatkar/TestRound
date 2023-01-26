@@ -1,8 +1,9 @@
 <template>
     <div class="cart-card">
         <v-row>
-            <v-col v-for="item in $store.state.cart" :key="item.name">
-                <v-card class="mx-auto" max-width="600">
+            <v-col v-for="item in $store.state.cart" :key="item.id"  cols="12"
+        sm="6" md="4" xs="12">
+                <v-card class="mx-auto" max-width="350" min-width="350">
                     <v-img class="align-end text-white" :src="item.image" height="125" min-width="125" cover>
 
                     </v-img>
@@ -46,7 +47,7 @@ const increaseProductAmount = (item) => {
 };
 const decreaseProductAmount = (item) => {
     store.state.cart.forEach((cartItem) => {
-        if (cartItem.id == item.id && item.count >= 1) {
+        if (cartItem.id == item.id && item.count > 1) {
             store.commit("UPDATE_CART", {
                 ...item,
                 count: item.count - 1,
