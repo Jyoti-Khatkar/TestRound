@@ -10,7 +10,7 @@ export default createStore({
     },
     UPDATE_CART (state, item) {
         state.cart.forEach(cartItem=>{
-            if(cartItem.name==item.name){
+            if(cartItem.id==item.id){
                 cartItem.count = item.count;
             }
         });

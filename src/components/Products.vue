@@ -2,8 +2,8 @@
   <div class="product-card">
     <!-- <Header /> -->
     <v-row>
-      <v-col v-for="item in product" :key="item.name" cols="4" xs="12">
-        <v-card class="mx-auto" max-width="600">
+      <v-col v-for="item in product" :key="item.id" >
+        <v-card class="mx-auto" max-width="600" min-width="550">
           <v-img
             class="align-end text-white"
             :src="item.image"
@@ -28,54 +28,6 @@
         </v-card>
       </v-col>
     </v-row>
-
-    <!-- <v-card width="550" height="450" class="rounded-lg ma-2" elevation="15">
-      <v-card-title>
-        <span class="d-flex justify-space-between mt-2">
-          <p class="text-h6 text--primary mb-1">Product List</p>
-        </span>
-      </v-card-title>
-      <v-card-text class="card-sm-content">
-        <v-list>
-          <v-list-item
-            v-for="(item, i) in product"
-            :key="i"
-            :value="item"
-            :class="item.name"
-            active-color="purple"
-          >
-            <template v-slot:prepend>
-              <v-avatar size="84" tile>
-                <img
-                  :src="item.image"
-                  alt="user"
-                  style="width: 35px; height: 35px"
-                />
-              </v-avatar>
-            </template>
-
-            <v-list-item-title v-text="item.name"></v-list-item-title>
-
-            <template v-slot:append>
-              <Button icon="mdi mdi-eye" iconPos="center" class="ml-2 purple" />
-              <v-btn
-                @click="addCart(item)"
-                :class="alreadyAdded ? 'bg-blue' : 'bg-light'"
-                >ADD TO CART
-              </v-btn>
-            </template>
-          </v-list-item>
-        </v-list>
-      </v-card-text>
-      <v-sheet class="d-flex justify-center my-4 py-2 add-user">
-        <Button
-          icon="pi pi-plus"
-          iconPos="center"
-          class="purple"
-          @click="addUser(true)"
-        />
-      </v-sheet>
-    </v-card> -->
   </div>
 </template>
 <script setup>
@@ -104,7 +56,7 @@ const addCart = (item) => {
   // console.log(item);
   let existingItem = null;
   store.state.cart.forEach((cartItem) => {
-    if (cartItem.name == item.name) {
+    if (cartItem.id == item.id) {
       existingItem = cartItem;
     }
   });
