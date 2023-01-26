@@ -14,6 +14,12 @@ export default createStore({
                 cartItem.count = item.count;
             }
         });
-    }
+    },
+    REMOVE_FROM_CART(state, item) {
+        let newState = state.cart.filter(cartItem => 
+          cartItem.id!=item.id
+        );
+        state.cart = newState;
+      }
   }
 })

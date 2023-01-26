@@ -26,7 +26,7 @@
     </v-app-bar>
 
     <v-main class="set-heig">
-      <v-card class="set-color"><router-view /></v-card>
+      <div class="set-color"><router-view /></div>
     </v-main>
 </template>
 <script setup>

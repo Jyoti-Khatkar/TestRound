@@ -1,11 +1,11 @@
 <template>
-  <div class="product-card">
+  <div class="product-cards">
 
     <v-row>
 
-      <v-col v-for="item in product" :key="item.id" cols="12"
-        sm="6" md="4" xs="12" >
-        <v-card class="mx-auto" max-width="350" min-width="350">
+      <v-col v-for="item in product" :key="item.id" cols="12" sm="6" md="4"
+        xs="12">
+        <v-card class="mx-auto product-card" max-width="350" min-width="350">
           <v-img class="align-end text-white" :src="item.image" height="125" min-width="125" cover>
 
           </v-img>
@@ -38,15 +38,6 @@ const store = useStore();
 const router = useRouter();
 const alreadyAdded = ref(false);
 const Products = ref([
-  {
-    name: "iphone",
-    avatar: "",
-  },
-
-  {
-    name: "Hp laptop",
-    avatar: "",
-  },
 ]);
 const addCart = (item) => {
   // console.log(item);
@@ -71,11 +62,7 @@ const addCart = (item) => {
 };
 </script>
 <style lang="scss" scoped>
-.product-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
 
-}
+
+
 </style>

@@ -1,30 +1,26 @@
 <template>
     <div class="login-card">
-        <v-card class="mx-auto form-card" width="400" elevation="15">
-            <template v-slot:title> Login Form </template>
+        <div class="left-panel">
+            <img src="../assets/images/login.png" alt="" />
+        </div>
+        <div class="right-panel">
+            <v-card class="mx-auto form-card" min-width="350" elevation="5">
+                <!-- <template v-slot:title> Login Form </template> -->
+                <h1 class=" mt-8 text-center">Sign In</h1>
+                <v-card-text>
+                    <v-form ref="form" class="pb-10" v-model="valid" lazy-validation>
+                        <v-text-field v-model="email" :rules="emailRules" variant="underlined" label="E-mail"
+                            required></v-text-field>
 
-            <v-card-text>
-                <v-form ref="form" v-model="valid" lazy-validation>
-                    <!-- <v-text-field
-            v-model="name"
-            :counter="10"
-            :rules="nameRules"
-            variant="underlined"
-            label="Name"
-            required
-          ></v-text-field> -->
-
-                    <v-text-field v-model="email" :rules="emailRules" variant="underlined" label="E-mail"
-                        required></v-text-field>
-
-                    <v-text-field variant="underlined" v-model="password"
-                        :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'" :rules="[rules.required, rules.min]"
-                        :type="show1 ? 'text' : 'password'" name="input-10-1" label="Password"
-                        hint="At least 8 characters" counter @click:append="show1 = !show1"></v-text-field>
-                    <v-btn color="purple" @click="login"> Login </v-btn>
-                </v-form>
-            </v-card-text>
-        </v-card>
+                        <v-text-field variant="underlined" v-model="password"
+                            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'" :rules="[rules.required, rules.min]"
+                            :type="show1 ? 'text' : 'password'" name="input-10-1" label="Password"
+                            hint="At least 8 characters" counter @click:append="show1 = !show1"></v-text-field>
+                        <v-btn color="purple" class="mt-4" @click="login"> Login </v-btn>
+                    </v-form>
+                </v-card-text>
+            </v-card>
+        </div>
     </div>
 </template>
 <script setup>
@@ -59,7 +55,10 @@ const validateForm = async () => {
     valid.value = await form.value.validate();
     if (valid.value.valid) {
         alert("Form is valid");
-        localStorage.setItem("UserDetail", JSON.stringify({ username: email.value }));
+        localStorage.setItem(
+            "UserDetail",
+            JSON.stringify({ username: email.value })
+        );
         router.push({ name: "Products" });
     } else {
         alert("Form is not valid");
@@ -71,15 +70,24 @@ const login = () => {
 </script>
 <style lang="scss" scoped>
 .login-card {
-
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+    overflow: auto;
+
+    width: 100%;
+    box-shadow: rgba(246, 6, 6, 0.35) 0px 5px 15px !important;
 }
 
-.form-card {
+@media screen and (max-width: 500px) {
+    .left-panel {
+        display: none;
+    }
 
-    border: 2px solid purple;
-
+    .form-card {
+        min-width: 250px !important;
+    }
 }
 </style>
