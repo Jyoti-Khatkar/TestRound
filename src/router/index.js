@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Login from '../components/Login.vue';
 import Products from '../components/Products.vue';
 import Cart from '../components/Cart.vue';
-// import Layout from '../components/Layout.vue';
+import Layout from '../components/Layout.vue';
 import NotFound from "../components/NotFound.vue";
 
 function checkForLogin(to, from, next) {
@@ -44,27 +44,25 @@ const routes = [
       beforeEnter: checkForLogin,
       component: Login,
     },
-    // {
-    // path: "/",
-    // name: "Layout",
-    // component: Layout,
-    // // beforeEnter: guardMyroute,
-    // children: [
+    {
+    path: "/",
+    name: "Layout",
+    component: Layout,
+    beforeEnter: guardMyroute,
+    children: [
     {
         path: "/cart",
         name: "Cart",
-        beforeEnter: guardMyroute,
         component: Cart,
     },
     {
         path: "/",
         name: "Products",
-        beforeEnter: guardMyroute,
         component: Products,
     },
-// ],
+],
 
-    // },
+    },
     {
         path: '/:pathMatch(.*)*',
         name: "NotFound",

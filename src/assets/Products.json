@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "name": "Air Macbook",
+        "price": "124500",
+        "image": "./src/assets/images/macbook.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Whirlpool Air Conditioner",
+        "price": "24500",
+        "image": "./src/assets/images/ac.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Ac",
+        "price": "24500",
+        "image": "./src/assets/images/ac.jpg"
+    },
+    {
+        "id": "4",
+        "name": "Air Pod",
+        "price": "24500",
+        "image": "./src/assets/images/airpod.jpg"
+    },
+    {
+        "id": "5",
+        "name": "Whirlpool Air Conditioner",
+        "price": "24500",
+        "image": "./src/assets/images/ac.jpg"
+    },
+    {
+        "id": "6",
+        "name": "Whirlpool Air Conditioner",
+        "price": "24500",
+        "image": "./src/assets/images/ac.jpg"
+    },
+    {
+        "id": "7",
+        "name": "Whirlpool Air Conditioner",
+        "price": "24500",
+        "image": "./src/assets/images/ac.jpg"
+    },
+    {
+        "id": "8",
+        "name": "Whirlpool Air Conditioner",
+        "price": "24500",
+        "image": "./src/assets/images/ac.jpg"
+    }
+]
