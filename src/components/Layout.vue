@@ -17,9 +17,9 @@
     
     
     </v-app-bar-title>
-    <template v-slot:append @click="signOut">
+    <template v-slot:append >
         <!-- <v-btn icon="mdi-dots-vertical"></v-btn> -->
-        <v-btn>
+        <v-btn @click="signOut">
     SignOut
     </v-btn>
       </template>
@@ -39,10 +39,14 @@ router.push({name:'Products'})
 const CartList=()=>{
 router.push({name:'Cart'})
 }
-const signOut=()=>{
-  //to remover userDetail from local storage
-  localStorage.removeItem('userDetail');
-  router.push({name:'Login'});
+const signOut = () => {
+
+let user = localStorage.getItem("UserDetail");
+if (user) {
+  localStorage.removeItem("UserDetail");
 }
+router.push({ name: "Login" ,path: "/login"});
+
+};
 </script>
 <style lang="scss" scoped></style>
