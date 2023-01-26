@@ -7,9 +7,9 @@
     },
     {
         "id": "2",
-        "name": "Whirlpool Air Conditioner",
+        "name": "samsung",
         "price": "24500",
-        "image": "./src/assets/images/ac.jpg"
+        "image": "./src/assets/images/samsung s22.jpg"
     },
     {
         "id": "3",
@@ -21,30 +21,30 @@
         "id": "4",
         "name": "Air Pod",
         "price": "24500",
-        "image": "./src/assets/images/airpod.jpg"
+        "image": "./src/assets/images/airpod.jpeg"
     },
     {
         "id": "5",
-        "name": "Whirlpool Air Conditioner",
+        "name": "ICD System",
         "price": "24500",
-        "image": "./src/assets/images/ac.jpg"
+        "image": "./src/assets/images/Icd.jpg"
     },
     {
         "id": "6",
-        "name": "Whirlpool Air Conditioner",
+        "name": "Washing Machine",
         "price": "24500",
-        "image": "./src/assets/images/ac.jpg"
+        "image": "./src/assets/images/lg_washing.jpg"
     },
     {
         "id": "7",
-        "name": "Whirlpool Air Conditioner",
+        "name": "Macbook Air",
         "price": "24500",
-        "image": "./src/assets/images/ac.jpg"
+        "image": "./src/assets/images/macbook.jpg"
     },
     {
         "id": "8",
-        "name": "Whirlpool Air Conditioner",
+        "name": "Oven",
         "price": "24500",
-        "image": "./src/assets/images/ac.jpg"
+        "image": "./src/assets/images/oven.jpg"
     }
 ]
