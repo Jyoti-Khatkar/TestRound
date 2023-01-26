@@ -5,13 +5,43 @@ import Cart from '../components/Cart.vue';
 // import Layout from '../components/Layout.vue';
 import NotFound from "../components/NotFound.vue";
 
-
+function checkForLogin(to, from, next) {
+    const user = localStorage.getItem("UserDetail");
+    if (user) {
+      const data = JSON.parse(user);
+      if (data.username) {
+        next("/");
+      }
+      else {
+        next();
+      }
+    }
+    else {
+      next();
+    }
+  }
+function guardMyroute(to, from, next) {
+    const user = localStorage.getItem("UserDetail");
+    console.log(user,'user');
+    if (user) {
+      const data = JSON.parse(user);
+      if (data.username) {
+        next();
+      }
+      else {
+        next("/login")
+      }
+    } else {
+      next("/login");
+    }
+  }
 
 const routes = [
     
     {
       path: "/login",
       name: "Login",
+      beforeEnter: checkForLogin,
       component: Login,
     },
     // {
@@ -23,11 +53,13 @@ const routes = [
     {
         path: "/cart",
         name: "Cart",
+        beforeEnter: guardMyroute,
         component: Cart,
     },
     {
         path: "/",
         name: "Products",
+        beforeEnter: guardMyroute,
         component: Products,
     },
 // ],
