@@ -1,19 +1,12 @@
 <template>
   <div class="product-card">
-    <!-- <Header /> -->
     <v-row>
-      <v-col v-for="item in product" :key="item.id" >
+      <v-col v-for="item in product" :key="item.id">
         <v-card class="mx-auto" max-width="600" min-width="550">
-          <v-img
-            class="align-end text-white"
-            :src="item.image"
-            height="125"
-            min-width="125"
-            cover
-          >
-            
+          <v-img class="align-end text-white" :src="item.image" height="125" min-width="125" cover>
+
           </v-img>
-  <v-card-title>{{ item.name }}</v-card-title>
+          <v-card-title>{{ item.name }}</v-card-title>
           <v-card-subtitle class="pt-4">Rs. {{ item.price }}</v-card-subtitle>
 
           <v-card-text>
@@ -23,7 +16,7 @@
           </v-card-text>
 
           <v-card-actions>
-            <v-btn @click="addCart(item)" color="orange"> ADD TO CART </v-btn>
+            <v-btn @click="addCart(item)" class="bg-primary" variant="tonal"> ADD TO CART </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -80,8 +73,6 @@ const addCart = (item) => {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
- 
+
 }
-
-
 </style>
